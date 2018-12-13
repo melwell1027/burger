@@ -40,22 +40,34 @@ var orm = {
             callback(result)
         });
     },
-    // insertOne: function (table, cols, vals, callback) {
-    //     let queryString = "INSERT INTO " + table;
+    insertOne: function (table, cols, vals, callback) {
+        let queryString = "INSERT INTO " + table;
 
-    //     queryString += " (";
-    //     queryString += cols.toString();
-    //     queryString += ") ";
-    //     queryString += "VALUES (";
-    //     queryString += printQuestionMarks(vals.length);
-    //     queryString += ") ";
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
 
-    //     connection.query(queryString, vals, function (err, data) {
-    //         if (err) throw err
+        connection.query(queryString, vals, function (err, data) {
+            if (err) throw err
+            callback(data);
+        })
+    },
 
-    //         // callback(data);
-    //     })
-    // }
-}
+    updateOne: function (table, objColVals, condition, callback) {
+        let queryString = "UPDATE " + table;
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        connection.query(queryString, function (err, result) {
+            if (err) throw err;
+            callback(result);
+        });
+    }
+};
 
 module.exports = orm;
