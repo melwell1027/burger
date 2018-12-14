@@ -1,13 +1,42 @@
-<h1>Eat the Burger</h1>
+<div class="container">
 
-<ul>
-    {{#each burgers}}
-    <li>{{burger_name}}</li>
-    {{/each}}
-</ul>
+    <div class="jumbotron">
+        <h1>Eat That Burger</h1>
+        <h3>Add A Burger Below, Then Eat It!</h3>
+    </div>
 
-<form action="/burgers" method="POST">
-    <textarea type="text" id="burgername" name="burger_name"></textarea>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Menu</h2>
+        </div>
 
-    <button type="submit">Submit</button>
-</form>
+        <div class="col-md-6">
+            <h2>Eaten</h2>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+                {{#each burgers}}
+                <div>
+                    {{burger_name}} <button type="button" class="btn btn-primary btn-sm">Eat Me!</button>
+                </div>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <form action="/burgers" method="POST">
+            <textarea type="text" id="burgername" name="burger_name"></textarea>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</div>
