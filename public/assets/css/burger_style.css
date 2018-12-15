@@ -1,0 +1,20 @@
+.jumbotron {
+    background-image: url(../img/Fries.png);
+    border-bottom: red 30px solid;
+}
+
+.btn {
+    background-color: red;
+    border: none;
+}
+
+.change-devoured {
+    background-color: white;
+    color: red;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+

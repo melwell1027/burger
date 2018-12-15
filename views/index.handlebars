@@ -1,24 +1,17 @@
+<div class="jumbotron">
+    <h1>Eat That Burger</h1>
+    <h3>Add A Burger Below, Then Eat It!</h3>
+</div>
+
 <div class="container">
 
-    <div class="jumbotron">
-        <h1>Eat That Burger</h1>
-        <h3>Add A Burger Below, Then Eat It!</h3>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Menu</h2>
-        </div>
-
-        <div class="col-md-6">
-            <h2>Eaten</h2>
-        </div>
-    </div>
 
     <br>
 
     <div class="row">
         <div class="col-md-6" id="menu_col">
+            <h2>Menu</h2>
+            <hr>
             <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
@@ -29,8 +22,9 @@
         </div>
 
         <div class="col-md-6" id="eaten_col">
+            <h2>Eaten</h2>
+            <hr>
             <ul>
-
                 {{#each burgers}}
                 {{#if devoured}}
                 <li>{{burger_name}}</li>
